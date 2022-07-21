@@ -1,0 +1,41 @@
+server:
+  port: 8110
+
+ 
+spring:
+  application:
+    name: spring-cloud-gateway-server
+  cloud:
+    gateway:
+      routes:
+      - id: AdminService
+        uri: http://localhost:8110/
+        predicates:
+        - Path=/AdminService/**
+       
+      - id: UserService
+        uri: http://localhost:8111/
+        predicates:
+        - Path=/UserService/**
+       
+      - id: WasherService
+        uri: http://localhost:8112/
+        predicates:
+        - Path=/WasherService/**
+       
+      - id: OrderService
+        uri: http://localhost:8113/
+        predicates:
+        - Path=/OrderService/**  
+     
+      - id: ManagementService
+        uri: http://localhost:8114/
+        predicates:
+        - Path=/ManagementService/**
+     
+      - id: NotifyService
+        uri: http://localhost:8115/
+        predicates:
+        - Path=/NotifyService/**
+       
+     
